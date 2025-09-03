@@ -24,6 +24,11 @@ describe('Testes de Operações da Calculadora', () => {
                 expect(resultadoDaSoma).to.equal(5);
                 if (resultadoDaSoma !== 5) throw new Error(`Esperado 5, mas recebeu ${resultadoDaSoma}`);
             });
+            it('A função deve ser capaz de somar zero a zero', () => {
+                const resultadoDaSoma = somarDoisNumeros(0, 0);
+                expect(resultadoDaSoma).to.equal(0);
+                if (resultadoDaSoma !== 0) throw new Error(`Esperado 0, mas recebeu ${resultadoDaSoma}`);
+            });
         });
     });
     
