@@ -17,9 +17,15 @@ function dividirDoisNumeros(num1, num2) {
     return num1 / num2;
 }
 
+function calcularMediaDeDoisNumeros(num1, num2) {
+    const resultadoSoma = somarDoisNumeros(num1, num2);
+    return dividirDoisNumeros(resultadoSoma, 2);
+}
+
 module.exports = { 
     somarDoisNumeros,
     subtrairDoisNumeros,
     multiplicarDoisNumeros,
-    dividirDoisNumeros
+    dividirDoisNumeros,
+    calcularMediaDeDoisNumeros
  };
