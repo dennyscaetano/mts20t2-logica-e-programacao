@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "npm run mocha",
-    "mocha": "mocha tests/**/*.test.js"
+    "mocha": "mocha tests/**/*.test.js",
+    "test:report": "mocha tests/**/*.test.js --reporter mochawesome --reporter-options reportDir=reports,reportFilename=mochawesome-report,quiet=true"
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,8 @@
   "dependencies": {
     "chai": "^6.0.1",
     "mocha": "^11.7.2"
+  },
+  "devDependencies": {
+    "mochawesome": "^7.1.3"
   }
 }

@@ -34,11 +34,25 @@ describe('Testes de Operações da Calculadora', () => {
                 expect(resultadoDaSubtracao).to.equal(2);
                 if (resultadoDaSubtracao !== 2) throw new Error(`Esperado 2, mas recebeu ${resultadoDaSubtracao}`);
             });
-
             it('A função deve ser capaz de subtrair um número positivo e um negativo', () => {
                 const resultadoDaSubtracao = subtrairDoisNumeros(5, -3);
                 expect(resultadoDaSubtracao).to.equal(8);
                 if (resultadoDaSubtracao !== 8) throw new Error(`Esperado 8, mas recebeu ${resultadoDaSubtracao}`);
+            });
+            it('A função deve ser capaz de subtrair dois números negativos', () => {
+                const resultadoDaSubtracao = subtrairDoisNumeros(-5, -3);
+                expect(resultadoDaSubtracao).to.equal(-2);
+                if (resultadoDaSubtracao !== -2) throw new Error(`Esperado -2, mas recebeu ${resultadoDaSubtracao}`);
+            });
+            it('A função deve ser capaz de subtrair zero de um número', () => {
+                const resultadoDaSubtracao = subtrairDoisNumeros(5, 0);
+                expect(resultadoDaSubtracao).to.equal(5);
+                if (resultadoDaSubtracao !== 5) throw new Error(`Esperado 5, mas recebeu ${resultadoDaSubtracao}`);
+            });
+            it('A função deve ser capaz de subtrair um número de zero', () => {
+                const resultadoDaSubtracao = subtrairDoisNumeros(0, 5);
+                expect(resultadoDaSubtracao).to.equal(-5);
+                if (resultadoDaSubtracao !== -5) throw new Error(`Esperado -5, mas recebeu ${resultadoDaSubtracao}`);
             });
         });
     });
@@ -50,11 +64,20 @@ describe('Testes de Operações da Calculadora', () => {
                 expect(resultadoDaMultiplicacao).to.equal(15);
                 if (resultadoDaMultiplicacao !== 15) throw new Error(`Esperado 15, mas recebeu ${resultadoDaMultiplicacao}`);
             });
-
             it('A função deve ser capaz de multiplicar um número positivo e um negativo', () => {
                 const resultadoDaMultiplicacao = multiplicarDoisNumeros(5, -3);
                 expect(resultadoDaMultiplicacao).to.equal(-15);
                 if (resultadoDaMultiplicacao !== -15) throw new Error(`Esperado -15, mas recebeu ${resultadoDaMultiplicacao}`);
+            });
+            it('A função deve ser capaz de multiplicar dois números negativos', () => {
+                const resultadoDaMultiplicacao = multiplicarDoisNumeros(-5, -3);
+                expect(resultadoDaMultiplicacao).to.equal(15);
+                if (resultadoDaMultiplicacao !== 15) throw new Error(`Esperado 15, mas recebeu ${resultadoDaMultiplicacao}`);
+            });
+            it('A função deve ser capaz de multiplicar um número por zero', () => {
+                const resultadoDaMultiplicacao = multiplicarDoisNumeros(5, 0);
+                expect(resultadoDaMultiplicacao).to.equal(0);
+                if (resultadoDaMultiplicacao !== 0) throw new Error(`Esperado 0, mas recebeu ${resultadoDaMultiplicacao}`);
             });
         });
     });
@@ -66,7 +89,6 @@ describe('Testes de Operações da Calculadora', () => {
                 expect(resultadoDaDivisao).to.equal(2);
                 if (resultadoDaDivisao !== 2) throw new Error(`Esperado 2, mas recebeu ${resultadoDaDivisao}`);
             });
-
             it('A função deve ser capaz de lançar um erro ao tentar dividir por zero', () => {
                 let erroLançado = false;
                 try {
@@ -78,6 +100,21 @@ describe('Testes de Operações da Calculadora', () => {
                     }
                 }
                 if (!erroLançado) throw new Error('Esperado um erro ao dividir por zero, mas nenhum erro foi lançado.');
+            });
+            it('A função deve ser capaz de dividir um número positivo por um negativo', () => {
+                const resultadoDaDivisao = dividirDoisNumeros(6, -3);
+                expect(resultadoDaDivisao).to.equal(-2);
+                if (resultadoDaDivisao !== -2) throw new Error(`Esperado -2, mas recebeu ${resultadoDaDivisao}`);
+            });
+            it('A função deve ser capaz de dividir dois números negativos', () => {
+                const resultadoDaDivisao = dividirDoisNumeros(-6, -3);
+                expect(resultadoDaDivisao).to.equal(2);
+                if (resultadoDaDivisao !== 2) throw new Error(`Esperado 2, mas recebeu ${resultadoDaDivisao}`);
+            });
+            it('A função deve ser capaz de dividir zero por um número', () => {
+                const resultadoDaDivisao = dividirDoisNumeros(0, 5);
+                expect(resultadoDaDivisao).to.equal(0);
+                if (resultadoDaDivisao !== 0) throw new Error(`Esperado 0, mas recebeu ${resultadoDaDivisao}`);
             });
         });
     });

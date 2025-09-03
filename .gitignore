@@ -1,1 +1,17 @@
-node_modules
+node_modules/
+# npm logs
+npm-debug.log*
+
+# Reports and coverage
+reports/
+coverage/
+
+# macOS
+.DS_Store
+
+# Editor directories and files
+.vscode/
+.idea/
+
+# npm package-lock
+package-lock.json
